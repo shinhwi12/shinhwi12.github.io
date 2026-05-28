@@ -2,7 +2,7 @@
 title: "Timeline"
 section: "Timeline"
 order: 5
-summary: "A chronological ledger for releases, world events, and archive discoveries."
+summary: "A chronological ledger for chapter events, archive discoveries, soundtrack cues, and public release dates."
 ---
 
-Dates will be added only when they clarify the official record.
+Dates enter the timeline only when they clarify causality inside the official record.

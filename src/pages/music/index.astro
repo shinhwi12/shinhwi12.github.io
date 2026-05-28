@@ -4,29 +4,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 
 const entries = await getCollection('music');
-const categories = ['SHINHWI Originals', 'Project UNAC OST'];
+const categories = [
+  {
+    name: 'SHINHWI Originals',
+    note: 'Artist catalog works by SHINHWI. These songs can share atmosphere with Project UNAC, but they are not filed as scene-specific soundtrack cues.'
+  },
+  {
+    name: 'Project UNAC OST',
+    note: 'Soundtrack material for the worldbuilding project. These entries are tied to chapters, motifs, places, and archive events inside the UNAC canon.'
+  }
+];
 const rendered = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
 ---
 <BaseLayout title="Music">
-  <PageHero kicker="Digital booklet" title="Music" lead="Music is divided between SHINHWI Originals and the Project UNAC OST. Each entry is prepared for concept notes, lyrics, credits, related images, and platform links." />
+  <PageHero kicker="Digital booklet" title="Music" lead="The music archive is written like liner notes: catalog numbers, concepts, production notes, and listening links. SHINHWI Originals and Project UNAC OST remain clearly separated." />
   <section class="section">
     <div class="container">
       {categories.map((category) => (
-        <section class="music-section" aria-labelledby={category.toLowerCase().replaceAll(' ', '-')}>
-          <div class="section-head">
-            <p class="kicker">Music archive</p>
-            <h2 id={category.toLowerCase().replaceAll(' ', '-')} class="display-lg">{category}</h2>
+        <section class="music-section" aria-labelledby={category.name.toLowerCase().replaceAll(' ', '-')}>
+          <div class="section-head booklet-head">
+            <p class="kicker">Music archive / separated catalog</p>
+            <h2 id={category.name.toLowerCase().replaceAll(' ', '-')} class="display-lg">{category.name}</h2>
+            <p class="body-copy">{category.note}</p>
           </div>
-          {rendered.filter(({ entry }) => entry.data.category === category).map(({ entry, Content }) => (
-            <article class="album-feature-band">
-              <div class="album-cover" aria-hidden="true"></div>
+          {rendered.filter(({ entry }) => entry.data.category === category.name).map(({ entry, Content }) => (
+            <article class="booklet-entry">
+              <div class="booklet-meta" aria-label="Catalog metadata">
+                <p class="meta">{entry.data.catalog}</p>
+                <p class="meta">{entry.data.kind}</p>
+                <p class="meta">{entry.data.release}</p>
+              </div>
               <div>
-                <p class="meta">{entry.data.catalog} / {entry.data.kind} / {entry.data.release}</p>
                 <h3 class="display-md">{entry.data.title}</h3>
                 <p class="lead">{entry.data.concept}</p>
                 <div class="prose"><Content /></div>
-                <div class="platforms">
-                  {entry.data.platforms.map((platform) => <a class="button-primary" href={platform.url}>{platform.label}</a>)}
+                <div class="platforms" aria-label={`${entry.data.title} listening links`}>
+                  {entry.data.platforms.map((platform) => <a class="text-link" href={platform.url}>{platform.label}</a>)}
                 </div>
               </div>
             </article>

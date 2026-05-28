@@ -315,44 +315,17 @@ img {
   text-decoration: none;
 }
 
-.surface-block,
-.archive-figure {
-  padding: var(--space-lg);
-  border: 1px solid var(--color-hairline);
-  background: var(--color-surface-soft);
+.surface-block {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-hairline);
 }
 
 .archive-figure {
   display: grid;
-  gap: var(--space-lg);
-}
-
-.placeholder-image {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border: 1px solid var(--color-hairline-strong);
-  background: var(--color-surface-card);
-}
-
-.placeholder-image::before,
-.placeholder-image::after {
-  position: absolute;
-  content: '';
-  background: var(--color-hairline);
-}
-
-.placeholder-image::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-}
-
-.placeholder-image::after {
-  top: 50%;
-  right: 0;
-  left: 0;
-  height: 1px;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-hairline);
 }
 
 .home-archive-section {
@@ -399,10 +372,22 @@ img {
   border-top: 1px solid var(--color-hairline);
 }
 
-.album-cover {
-  aspect-ratio: 1;
-  border: 1px solid var(--color-hairline-strong);
-  background: var(--color-surface-card);
+.booklet-head {
+  margin-bottom: var(--space-xl);
+}
+
+.booklet-entry {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(var(--space-lg), 5vw, var(--space-xxl));
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-hairline);
+}
+
+.booklet-meta {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
 }
 
 .platforms {
@@ -443,6 +428,17 @@ img {
   gap: var(--space-xxl);
 }
 
+.figure-list {
+  display: grid;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.category-hold {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
 .site-footer {
   padding: var(--space-xxl) var(--space-lg);
   border-top: 1px solid var(--color-hairline);
@@ -471,6 +467,7 @@ img {
 
   .editorial-grid,
   .album-feature-band,
+  .booklet-entry,
   .world-intro-band,
   .gallery-grid {
     grid-template-columns: 1fr;

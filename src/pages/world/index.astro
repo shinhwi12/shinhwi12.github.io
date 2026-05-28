@@ -6,18 +6,18 @@ import PageHero from '../../components/PageHero.astro';
 const records = (await getCollection('world')).sort((a, b) => a.data.order - b.data.order);
 ---
 <BaseLayout title="World">
-  <PageHero kicker="Setting archive" title="World" lead="An official archive for places, characters, factions, terms, timelines, and recovered material. The record remains precise, partial, and quiet." />
+  <PageHero kicker="World settings" title="World" lead="The World archive holds the controlled record of Project UNAC: places, factions, characters, terms, timelines, and recovered documents. It is written as canon infrastructure, not as a loose encyclopedia." />
   <section class="section">
     <div class="container world-intro-band">
       <div class="section-head">
-        <p class="kicker">Index / controlled record</p>
-        <h2 class="display-lg">Archive index</h2>
-        <p class="body-copy">The world section is organized as a setting archive, not a generic wiki. Entries are placeholders until canon material is released.</p>
+        <p class="kicker">Index / official record</p>
+        <h2 class="display-lg">Setting ledger</h2>
+        <p class="body-copy">Each entry is intentionally narrow. The archive reveals the world by filed evidence—signals, offices, corridors, protocols, names—so the setting keeps its silence while the story opens it.</p>
       </div>
       <div class="line-list">
         {records.map((record) => (
           <article class="line-item">
-            <p class="meta">{record.data.section}</p>
+            <p class="meta">{String(record.data.order).padStart(2, '0')} / {record.data.section}</p>
             <h3 class="display-sm">{record.data.title}</h3>
             <p class="body-copy">{record.data.summary}</p>
           </article>

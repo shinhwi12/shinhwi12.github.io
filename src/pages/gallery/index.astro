@@ -4,39 +4,45 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 
 const entries = await getCollection('gallery');
-const categories = ['World Art', 'Character Art', 'Music Visuals', 'Archive / Origins'];
+const categories = ['World Art', 'Character Art', 'Music Visuals', 'Archive / Origins'] as const;
+const categoryNotes: Record<(typeof categories)[number], string> = {
+  'World Art': 'Environment, signal, and setting records selected for their canon value.',
+  'Character Art': 'Character files will open only when designs are approved for public archive use.',
+  'Music Visuals': 'Visual material attached to SHINHWI releases and Project UNAC soundtrack entries.',
+  'Archive / Origins': 'Origin studies and marks preserved because they explain the project surface.'
+};
 ---
 <BaseLayout title="Gallery">
-  <PageHero kicker="Curated visual archive" title="Gallery" lead="Image records are grouped by archive category and presented as selected figures, not an image dump. Placeholder records reserve the structure for future artwork." />
+  <PageHero kicker="Curated visual archive" title="Gallery" lead="The gallery is a restrained register of selected visual records. Each figure is filed with date, source, and context so the archive feels curated rather than accumulated." />
   <section class="section">
     <div class="container">
-      {categories.map((category) => (
-        <section class="music-section">
-          <div class="section-head">
-            <p class="kicker">Image category</p>
-            <h2 class="display-lg">{category}</h2>
-          </div>
-          <div class="gallery-grid">
-            {entries.filter((entry) => entry.data.category === category).map((entry) => (
-              <figure class="archive-figure">
-                <div class="placeholder-image" aria-hidden="true"></div>
-                <figcaption>
-                  <p class="archive-label">{entry.data.date} / {entry.data.source}</p>
-                  <h3 class="display-sm">{entry.data.title}</h3>
-                  <p class="caption">{entry.data.caption}</p>
-                </figcaption>
-              </figure>
-            ))}
-            {entries.filter((entry) => entry.data.category === category).length === 0 && (
-              <div class="surface-block">
-                <p class="archive-label">Reserved category</p>
-                <h3 class="display-sm">Awaiting official material</h3>
-                <p class="body-copy">This category is intentionally quiet until selected images are approved for the archive.</p>
+      {categories.map((category) => {
+        const categoryEntries = entries.filter((entry) => entry.data.category === category);
+        return (
+          <section class="music-section gallery-category" aria-labelledby={category.toLowerCase().replaceAll(' ', '-')}>
+            <div class="section-head">
+              <p class="kicker">Visual register</p>
+              <h2 id={category.toLowerCase().replaceAll(' ', '-')} class="display-lg">{category}</h2>
+              <p class="body-copy">{categoryNotes[category]}</p>
+            </div>
+            {categoryEntries.length > 0 ? (
+              <div class="figure-list">
+                {categoryEntries.map((entry) => (
+                  <figure class="archive-figure">
+                    <figcaption>
+                      <p class="archive-label">{entry.data.date} / {entry.data.source}</p>
+                      <h3 class="display-sm">{entry.data.title}</h3>
+                      <p class="caption">{entry.data.caption}</p>
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
+            ) : (
+              <p class="archive-label category-hold">No public figures filed in this category.</p>
             )}
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

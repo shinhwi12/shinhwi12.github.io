@@ -7,15 +7,15 @@ const chapters = (await getCollection('story')).sort((a, b) => a.data.chapter - 
 const series = [...new Set(chapters.map((chapter) => chapter.data.series))];
 ---
 <BaseLayout title="Story">
-  <PageHero kicker="Serialized novel" title="Story" lead="Project UNAC chapters are arranged for a narrow, quiet reading experience. Series, chapter order, and previous-next navigation are defined in content collections." />
+  <PageHero kicker="Literary archive" title="Story" lead="Project UNAC fiction is arranged as a quiet ebook reader: chapter order, dated entries, and a narrow page built for sustained reading rather than announcements." />
   <section class="section">
     <div class="container editorial-grid">
       <div class="section-head">
-        <p class="kicker">Series list</p>
+        <p class="kicker">Series / first archive</p>
         <h2 class="display-lg">{series[0]}</h2>
-        <p class="body-copy">A placeholder serialized arc for the first public archive. Future series can be added as Markdown entries with shared metadata.</p>
+        <p class="body-copy">The first public sequence follows the opening of the Black Gate and the archive keeper assigned to a world that writes back. Each chapter is filed as part of the same literary record.</p>
       </div>
-      <div class="line-list">
+      <div class="line-list" aria-label="Chapter index">
         {chapters.map((chapter) => (
           <article class="line-item">
             <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')} / {chapter.data.published}</p>

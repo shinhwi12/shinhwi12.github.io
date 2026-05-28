@@ -2,8 +2,8 @@
 title: "Signal Corridor"
 category: "World Art"
 date: "2026-01-01"
-source: "Placeholder archive"
-caption: "A symbolic placeholder for the first world image: corridor, signal, and negative space."
+source: "Project UNAC archive"
+caption: "A world-setting figure for the first public image direction: corridor, signal, negative space, and an architectural silence connected to the Black Gate sequence."
 ---
 
-Reserved for future world artwork.
+Filed as a world image direction note until final art is approved.
