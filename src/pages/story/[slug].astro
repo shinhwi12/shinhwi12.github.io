@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('story');
-  return chapters.map((chapter) => ({ params: { slug: chapter.slug }, props: { chapter } }));
+  return chapters.map((chapter) => ({ params: { slug: chapter.id }, props: { chapter } }));
 }
 
 const { chapter } = Astro.props;
