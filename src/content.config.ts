@@ -1,7 +1,9 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const story = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/story' }),
   schema: z.object({
     title: z.string(),
     series: z.string(),
@@ -14,7 +16,7 @@ const story = defineCollection({
 });
 
 const music = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/music' }),
   schema: z.object({
     title: z.string(),
     category: z.enum(['SHINHWI Originals', 'Project UNAC OST']),
@@ -27,7 +29,7 @@ const music = defineCollection({
 });
 
 const gallery = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/gallery' }),
   schema: z.object({
     title: z.string(),
     category: z.enum(['World Art', 'Character Art', 'Music Visuals', 'Archive / Origins']),
@@ -38,7 +40,7 @@ const gallery = defineCollection({
 });
 
 const world = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/world' }),
   schema: z.object({
     title: z.string(),
     section: z.enum(['Overview', 'Characters', 'Factions', 'Glossary', 'Timeline', 'Archives']),
