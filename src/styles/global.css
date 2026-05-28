@@ -141,8 +141,8 @@ img {
 
 .home-hero-frame {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
-  gap: clamp(var(--space-xl), 8vw, var(--space-section));
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.42fr);
+  gap: clamp(var(--space-xl), 7vw, var(--space-section));
   align-items: end;
   min-height: min(760px, calc(100vh - 184px));
   padding-top: clamp(var(--space-xl), 8vh, var(--space-section));
@@ -152,7 +152,7 @@ img {
   display: grid;
   align-content: end;
   justify-items: start;
-  max-width: 920px;
+  max-width: 880px;
   padding-bottom: clamp(var(--space-xl), 10vh, var(--space-section));
 }
 
@@ -182,7 +182,7 @@ img {
 
 .display-xl {
   max-width: 980px;
-  font-size: clamp(44px, 10vw, 88px);
+  font-size: clamp(44px, 9.4vw, 84px);
   line-height: 0.98;
   letter-spacing: clamp(3px, 0.55vw, 7px);
 }
@@ -257,13 +257,15 @@ img {
 .hero-archive-rail {
   display: grid;
   align-content: end;
-  min-height: 360px;
+  min-height: 380px;
   padding-top: var(--space-lg);
+  padding-left: clamp(var(--space-md), 2vw, var(--space-lg));
   border-top: 1px solid var(--color-hairline);
+  border-left: 1px solid var(--color-hairline);
 }
 
 .archive-rail-marker {
-  margin: 0 0 var(--space-xxl);
+  margin: 0 0 clamp(var(--space-xl), 7vh, var(--space-xxl));
   color: var(--color-muted-soft);
   font-family: var(--font-mono);
   font-size: 11px;
@@ -275,11 +277,11 @@ img {
 .hero-index {
   display: grid;
   gap: var(--space-lg);
-  color: var(--color-muted);
+  color: var(--color-body);
   font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1.7;
-  letter-spacing: 1.3px;
+  font-size: 12px;
+  line-height: 1.85;
+  letter-spacing: 1.15px;
   text-transform: uppercase;
 }
 
@@ -290,7 +292,7 @@ img {
 .hero-index span {
   display: block;
   margin-bottom: var(--space-xs);
-  color: var(--color-muted-soft);
+  color: var(--color-muted);
 }
 
 .button-primary {
@@ -519,6 +521,8 @@ img {
 
   .hero-archive-rail {
     min-height: auto;
+    padding-left: 0;
+    border-left: 0;
   }
 
   .section {
