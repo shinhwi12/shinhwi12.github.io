@@ -2,7 +2,7 @@
 title: "Archives"
 section: "Archives"
 order: 6
-summary: "Recovered material, document fragments, and origin records belong here."
+summary: "Recovered documents, origin marks, drafts, and signal fragments are filed here when they explain how the world was found or altered."
 ---
 
-Old material is preserved as history, not decoration.
+The archive preserves documents as evidence. A fragment is included only when it changes the public understanding of Project UNAC.

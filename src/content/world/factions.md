@@ -2,7 +2,7 @@
 title: "Factions"
 section: "Factions"
 order: 3
-summary: "Faction entries will define institutions, crews, and hidden systems without turning the archive into a fan wiki."
+summary: "Institutions, crews, hidden offices, and archive protocols are tracked as systems of power inside the UNAC setting."
 ---
 
-Each faction entry should read like a recovered file: precise, partial, and quiet.
+Faction records should feel like recovered internal paperwork: exact, incomplete, and difficult to fully trust.
