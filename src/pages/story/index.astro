@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const chapters = (await getCollection('story')).sort((a, b) => a.data.chapter - b.data.chapter);
+const series = [...new Set(chapters.map((chapter) => chapter.data.series))];
+---
+<BaseLayout title="Story">
+  <PageHero kicker="Serialized novel" title="Story" lead="Project UNAC chapters are arranged for a narrow, quiet reading experience. Series, chapter order, and previous-next navigation are defined in content collections." />
+  <section class="section">
+    <div class="container editorial-grid">
+      <div class="section-head">
+        <p class="kicker">Series list</p>
+        <h2 class="display-lg">{series[0]}</h2>
+        <p class="body-copy">A placeholder serialized arc for the first public archive. Future series can be added as Markdown entries with shared metadata.</p>
+      </div>
+      <div class="line-list">
+        {chapters.map((chapter) => (
+          <article class="line-item">
+            <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')} / {chapter.data.published}</p>
+            <a href={`/story/${chapter.slug}/`}><h3 class="display-sm">{chapter.data.title}</h3></a>
+            <p class="body-copy">{chapter.data.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

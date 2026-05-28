@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const entries = await getCollection('music');
+const categories = ['SHINHWI Originals', 'Project UNAC OST'];
+const rendered = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
+---
+<BaseLayout title="Music">
+  <PageHero kicker="Digital booklet" title="Music" lead="Music is divided between SHINHWI Originals and the Project UNAC OST. Each entry is prepared for concept notes, lyrics, credits, related images, and platform links." />
+  <section class="section">
+    <div class="container">
+      {categories.map((category) => (
+        <section class="music-section" aria-labelledby={category.toLowerCase().replaceAll(' ', '-')}>
+          <div class="section-head">
+            <p class="kicker">Music archive</p>
+            <h2 id={category.toLowerCase().replaceAll(' ', '-')} class="display-lg">{category}</h2>
+          </div>
+          {rendered.filter(({ entry }) => entry.data.category === category).map(({ entry, Content }) => (
+            <article class="album-feature-band">
+              <div class="album-cover" aria-hidden="true"></div>
+              <div>
+                <p class="meta">{entry.data.catalog} / {entry.data.kind} / {entry.data.release}</p>
+                <h3 class="display-md">{entry.data.title}</h3>
+                <p class="lead">{entry.data.concept}</p>
+                <div class="prose"><Content /></div>
+                <div class="platforms">
+                  {entry.data.platforms.map((platform) => <a class="button-primary" href={platform.url}>{platform.label}</a>)}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+<BaseLayout title="Project UNAC">
+  <PageHero kicker="Official statement" title="Project UNAC" lead="Project UNAC is a media archive built from story, world records, music, and visual fragments. It is not a campaign page; it is the public face of an expanding canon." />
+  <section class="section">
+    <div class="container editorial-grid">
+      <div>
+        <h2 class="display-lg">Structure</h2>
+        <p class="lead">Worldbuilding defines the record. Story gives it time. Music gives it memory. Visuals appear only when they can carry archival weight.</p>
+      </div>
+      <div class="line-list">
+        <article class="line-item">
+          <p class="meta">01 / World</p>
+          <h3 class="display-sm">Setting archive</h3>
+          <p class="body-copy">Places, factions, terms, characters, and timelines are treated as official files.</p>
+        </article>
+        <article class="line-item">
+          <p class="meta">02 / Story</p>
+          <h3 class="display-sm">Serialized novel</h3>
+          <p class="body-copy">Chapters are presented as quiet reading surfaces rather than blog posts.</p>
+        </article>
+        <article class="line-item">
+          <p class="meta">03 / Music</p>
+          <h3 class="display-sm">Digital booklet</h3>
+          <p class="body-copy">SHINHWI Originals and Project UNAC OST entries hold concept notes, lyrics, credits, and links.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

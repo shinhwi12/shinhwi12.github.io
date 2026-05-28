@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Official archive and music portal for Project UNAC / SHINHWI.' } = Astro.props;
+const navItems = [
+  { href: '/project/', label: 'Project' },
+  { href: '/world/', label: 'World' },
+  { href: '/story/', label: 'Story' },
+  { href: '/music/', label: 'Music' },
+  { href: '/gallery/', label: 'Gallery' },
+  { href: '/about/', label: 'About' }
+];
+const currentPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} / Project UNAC</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="top-nav" aria-label="Primary navigation">
+        <nav class="nav-left" aria-label="Sections">
+          {navItems.slice(0, 3).map((item) => (
+            <a class="nav-link" href={item.href} aria-current={currentPath.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+        <a class="wordmark" href="/">Project UNAC</a>
+        <nav class="nav-right" aria-label="Archive sections">
+          {navItems.slice(3).map((item) => (
+            <a class="nav-link" href={item.href} aria-current={currentPath.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <div class="wordmark">SHINHWI</div>
+        <p>Official website placeholder / Static archive / No backend systems</p>
+      </footer>
+    </div>
+  </body>
+</html>
