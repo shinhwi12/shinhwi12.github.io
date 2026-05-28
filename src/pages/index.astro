@@ -3,39 +3,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Home" description="Project UNAC is a black-canvas world archive and music portal by SHINHWI.">
   <section class="hero-type-band home-hero">
-    <div class="container home-hero-copy">
-      <p class="kicker">Official archive / 음악 기록 보관소</p>
-      <h1 class="display-xl home-title">Project UNAC</h1>
-      <p class="lead home-lead">Austere records for a fictional world: serialized prose, sound, and image held on a black editorial surface. 세계관과 음악이 하나의 공식 기록으로 정리되는 밤의 아카이브.</p>
-      <div class="hero-index" aria-label="Archive identity">
-        <p><span>Discipline</span>World / Story / Sound</p>
-        <p><span>Direction</span>Black canvas, sparse image, exact text</p>
+    <div class="container home-hero-frame">
+      <div class="home-hero-copy">
+        <p class="kicker">Official archive / Project UNAC</p>
+        <h1 class="display-xl home-title">Project UNAC</h1>
+        <div class="home-lead-group" aria-label="Project UNAC archive statement">
+          <p class="lead home-lead">A black archive for a world told through story, sound, and image.</p>
+          <p class="lead home-lead home-lead-ko">세계관, 소설, 음악, 이미지가 하나의 공식 기록으로 정리되는 검은 아카이브.</p>
+        </div>
       </div>
-      <div class="button-row home-actions">
-        <a class="button-primary" href="/world/">Enter the world</a>
-        <a class="button-primary" href="/music/">Music by SHINHWI</a>
+
+      <div class="hero-archive-rail" aria-label="Project UNAC archive index">
+        <p class="archive-rail-marker">UNAC / INDEX 00</p>
+        <div class="hero-index" aria-label="Archive identity">
+          <p><span>Domain</span>World / Story / Sound / Image</p>
+          <p><span>Archive mode</span>Black canvas / Official record / Restrained image</p>
+        </div>
+        <div class="button-row home-actions">
+          <a class="button-primary" href="/project/">Read the statement</a>
+          <a class="button-primary" href="/world/">Enter the archive</a>
+        </div>
       </div>
     </div>
   </section>
   <section class="section home-archive-section">
     <div class="container editorial-grid home-archive-grid">
       <div class="section-head home-section-head">
-        <p class="kicker">Second fold / 기록의 표면</p>
-        <h2 class="display-lg">Archive surface</h2>
-        <p class="body-copy">The homepage remains quiet by design. It introduces the work as an official threshold first, then lets each section open with measured hierarchy and documentary restraint.</p>
+        <p class="kicker">Official record / 기록의 표면</p>
+        <h2 class="display-lg">Black archive index</h2>
+        <p class="body-copy">Project UNAC is arranged as a restrained record: a world portal, a serialized story surface, a sound archive, and a curated image register held together on a black canvas.</p>
       </div>
       <div class="archive-lines" aria-label="Archive sections">
         <a class="archive-line" href="/world/">
-          <span class="archive-label">World</span>
-          <span>세계의 규칙, 인물, 연대기를 위한 공식 색인.</span>
+          <span class="archive-label">World record</span>
+          <span>세계의 규칙, 인물, 세력, 연대기를 정리하는 공식 색인.</span>
         </a>
         <a class="archive-line" href="/story/">
-          <span class="archive-label">Story</span>
-          <span>문장으로 남겨진 장면과 연재 기록.</span>
+          <span class="archive-label">Story ledger</span>
+          <span>연재 소설과 장면의 흐름을 문장 중심으로 보존하는 기록.</span>
         </a>
         <a class="archive-line" href="/music/">
-          <span class="archive-label">Music</span>
-          <span>SHINHWI의 사운드트랙과 원곡 아카이브.</span>
+          <span class="archive-label">Sound register</span>
+          <span>SHINHWI Originals와 Project UNAC OST를 나누어 보관하는 음악 장부.</span>
         </a>
       </div>
     </div>
