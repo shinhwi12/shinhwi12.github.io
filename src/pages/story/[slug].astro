@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('story');
+  return chapters.map((chapter) => ({ params: { slug: chapter.slug }, props: { chapter } }));
+}
+
+const { chapter } = Astro.props;
+const { Content } = await render(chapter);
+---
+<BaseLayout title={chapter.data.title}>
+  <article class="story-reader">
+    <p class="kicker">{chapter.data.series} / Chapter {String(chapter.data.chapter).padStart(2, '0')}</p>
+    <h1 class="display-lg">{chapter.data.title}</h1>
+    <p class="lead">{chapter.data.excerpt}</p>
+    <div class="prose">
+      <Content />
+    </div>
+    <nav class="reader-nav" aria-label="Chapter navigation">
+      <span>{chapter.data.previous ? <a href={`/story/${chapter.data.previous}/`}>Previous</a> : 'Previous / none'}</span>
+      <a href="/story/">Chapter index</a>
+      <span>{chapter.data.next ? <a href={`/story/${chapter.data.next}/`}>Next</a> : 'Next / none'}</span>
+    </nav>
+  </article>
+</BaseLayout>

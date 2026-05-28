@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const entries = await getCollection('gallery');
+const categories = ['World Art', 'Character Art', 'Music Visuals', 'Archive / Origins'];
+---
+<BaseLayout title="Gallery">
+  <PageHero kicker="Curated visual archive" title="Gallery" lead="Image records are grouped by archive category and presented as selected figures, not an image dump. Placeholder records reserve the structure for future artwork." />
+  <section class="section">
+    <div class="container">
+      {categories.map((category) => (
+        <section class="music-section">
+          <div class="section-head">
+            <p class="kicker">Image category</p>
+            <h2 class="display-lg">{category}</h2>
+          </div>
+          <div class="gallery-grid">
+            {entries.filter((entry) => entry.data.category === category).map((entry) => (
+              <figure class="archive-figure">
+                <div class="placeholder-image" aria-hidden="true"></div>
+                <figcaption>
+                  <p class="archive-label">{entry.data.date} / {entry.data.source}</p>
+                  <h3 class="display-sm">{entry.data.title}</h3>
+                  <p class="caption">{entry.data.caption}</p>
+                </figcaption>
+              </figure>
+            ))}
+            {entries.filter((entry) => entry.data.category === category).length === 0 && (
+              <div class="surface-block">
+                <p class="archive-label">Reserved category</p>
+                <h3 class="display-sm">Awaiting official material</h3>
+                <p class="body-copy">This category is intentionally quiet until selected images are approved for the archive.</p>
+              </div>
+            )}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

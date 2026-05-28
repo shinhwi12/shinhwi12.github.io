@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const records = (await getCollection('world')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="World">
+  <PageHero kicker="Setting archive" title="World" lead="An official archive for places, characters, factions, terms, timelines, and recovered material. The record remains precise, partial, and quiet." />
+  <section class="section">
+    <div class="container world-intro-band">
+      <div class="section-head">
+        <p class="kicker">Index / controlled record</p>
+        <h2 class="display-lg">Archive index</h2>
+        <p class="body-copy">The world section is organized as a setting archive, not a generic wiki. Entries are placeholders until canon material is released.</p>
+      </div>
+      <div class="line-list">
+        {records.map((record) => (
+          <article class="line-item">
+            <p class="meta">{record.data.section}</p>
+            <h3 class="display-sm">{record.data.title}</h3>
+            <p class="body-copy">{record.data.summary}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
