@@ -1,29 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Home">
-  <section class="hero-type-band">
-    <div class="container">
-      <p class="kicker">Official archive / Music portal</p>
-      <h1 class="display-xl">Project UNAC</h1>
-      <p class="lead">A black-canvas archive where worldbuilding, serialized fiction, music, and restrained visual records are organized as one official body of work.</p>
-      <div class="button-row">
+<BaseLayout title="Home" description="Project UNAC is a black-canvas world archive and music portal by SHINHWI.">
+  <section class="hero-type-band home-hero">
+    <div class="container home-hero-copy">
+      <p class="kicker">Official archive / 음악 기록 보관소</p>
+      <h1 class="display-xl home-title">Project UNAC</h1>
+      <p class="lead home-lead">Austere records for a fictional world: serialized prose, sound, and image held on a black editorial surface. 세계관과 음악이 하나의 공식 기록으로 정리되는 밤의 아카이브.</p>
+      <div class="hero-index" aria-label="Archive identity">
+        <p><span>Discipline</span>World / Story / Sound</p>
+        <p><span>Direction</span>Black canvas, sparse image, exact text</p>
+      </div>
+      <div class="button-row home-actions">
         <a class="button-primary" href="/world/">Enter the world</a>
         <a class="button-primary" href="/music/">Music by SHINHWI</a>
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container editorial-grid">
-      <div class="section-head">
-        <p class="kicker">Second fold / symbolic record</p>
+  <section class="section home-archive-section">
+    <div class="container editorial-grid home-archive-grid">
+      <div class="section-head home-section-head">
+        <p class="kicker">Second fold / 기록의 표면</p>
         <h2 class="display-lg">Archive surface</h2>
-        <p class="body-copy">The site opens slowly: statement first, then record. Images remain rare, deliberate, and bound to their archive context.</p>
+        <p class="body-copy">The homepage remains quiet by design. It introduces the work as an official threshold first, then lets each section open with measured hierarchy and documentary restraint.</p>
       </div>
-      <figure class="archive-figure">
-        <div class="placeholder-image" aria-hidden="true"></div>
-        <figcaption class="caption">Placeholder symbolic image / source pending / version 0.1</figcaption>
-      </figure>
+      <div class="archive-lines" aria-label="Archive sections">
+        <a class="archive-line" href="/world/">
+          <span class="archive-label">World</span>
+          <span>세계의 규칙, 인물, 연대기를 위한 공식 색인.</span>
+        </a>
+        <a class="archive-line" href="/story/">
+          <span class="archive-label">Story</span>
+          <span>문장으로 남겨진 장면과 연재 기록.</span>
+        </a>
+        <a class="archive-line" href="/music/">
+          <span class="archive-label">Music</span>
+          <span>SHINHWI의 사운드트랙과 원곡 아카이브.</span>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
