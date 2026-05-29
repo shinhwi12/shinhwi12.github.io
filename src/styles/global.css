@@ -284,6 +284,15 @@ img {
   letter-spacing: 0;
 }
 
+.home-statement-copy {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.home-statement-copy p {
+  margin: 0;
+}
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
