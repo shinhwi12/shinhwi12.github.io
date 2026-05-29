@@ -1,50 +1,87 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Home" description="Project UNAC is a black-canvas world archive and music portal by SHINHWI.">
+<BaseLayout title="Home" description="Project UNAC is a real fantasy archive: a fictional worldbuilding project continued since 1994, with music by SHINHWI.">
   <section class="hero-type-band home-hero">
     <div class="container home-hero-frame">
       <div class="home-hero-copy">
-        <p class="kicker">Official archive / Project UNAC</p>
+        <div class="home-brand-row">
+          <div class="unac-logo-slot" aria-label="PROJECT UNAC logo slot">
+            <object data="/images/brand/unac-logo.png" type="image/png" aria-label="PROJECT UNAC logo"><span>UNAC</span></object>
+          </div>
+          <p class="kicker">Official archive / Real fantasy</p>
+        </div>
+        <p class="home-slogan">Real fantasy</p>
         <h1 class="display-xl home-title">Project UNAC</h1>
         <div class="home-lead-group" aria-label="Project UNAC archive statement">
-          <p class="lead home-lead">A black archive for a world told through story, sound, and image.</p>
-          <p class="lead home-lead home-lead-ko">검은 문턱 너머의 신호와 장면을 소설, 음악, 이미지로 봉인해 두는 Project UNAC의 공식 기록.</p>
+          <p class="lead home-lead">A fictional worldbuilding project continued since 1994.</p>
+          <p class="lead home-lead">UNAC is an imaginary world spanning medieval fantasy, modern reality, and the mythic realms of gods and demons.</p>
+          <p class="lead home-lead home-lead-ko">1994년부터 이어진 가상의 세계 UNAC.</p>
+          <p class="lead home-lead home-lead-ko">소설, 음악, 이미지, 영상, 게임으로 현실처럼 기록되는 판타지.</p>
         </div>
       </div>
 
       <div class="hero-archive-rail" aria-label="Project UNAC archive index">
-        <p class="archive-rail-marker">UNAC / INDEX 00</p>
+        <div class="archive-rail-head">
+          <p class="archive-rail-marker">UNAC / INDEX 00</p>
+          <div class="unac-logo-slot unac-logo-slot-rail" aria-label="PROJECT UNAC logo slot">
+            <object data="/images/brand/unac-logo.png" type="image/png" aria-label="PROJECT UNAC logo"><span>UNAC</span></object>
+          </div>
+        </div>
         <div class="hero-index" aria-label="Archive identity">
-          <p><span>Domain</span>World / Story / Sound / Image</p>
-          <p><span>Archive mode</span>Black canvas / Official record / Restrained image</p>
+          <p><span>Origin</span>Since 1994</p>
+          <p><span>World</span>Medieval fantasy / Modern world / Divine &amp; demonic myth</p>
+          <p><span>Core stories</span>소환마도 신휘 / 그때 하늘에서 / Der Freischutz</p>
+          <p><span>Media</span>Fiction / Music / Illustration / Video / Game</p>
+          <p><span>Music</span>SHINHWI Originals / Project UNAC world albums</p>
         </div>
         <div class="button-row home-actions">
+          <a class="button-primary" href="/world/">Enter the world</a>
+          <a class="button-primary" href="/music/">Music by SHINHWI</a>
           <a class="button-primary" href="/project/">Read the statement</a>
-          <a class="button-primary" href="/world/">Enter the archive</a>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="section latest-transmission" aria-labelledby="latest-transmission-title">
+    <div class="container latest-transmission-grid">
+      <div class="section-head latest-transmission-head">
+        <p class="kicker">Latest transmission</p>
+        <h2 id="latest-transmission-title" class="display-lg">Latest transmission</h2>
+        <p class="caption">Latest MV / SHINHWI transmission</p>
+      </div>
+      <div class="mv-embed" aria-label="Latest SHINHWI music video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/peH_uC9621o"
+          title="LATEST MV / SHINHWI TRANSMISSION"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="section home-archive-section">
     <div class="container editorial-grid home-archive-grid">
       <div class="section-head home-section-head">
         <p class="kicker">Official record / 기록의 표면</p>
         <h2 class="display-lg">Black archive index</h2>
-        <p class="body-copy">Project UNAC is arranged as a restrained record: a world portal, a serialized story surface, a sound archive, and a curated image register held together on a black canvas.</p>
+        <p class="body-copy">Project UNAC treats its fictional world as if it were real: a world portal, a serialized story surface, a sound archive, and a curated image register held together on a black canvas.</p>
       </div>
       <div class="archive-lines" aria-label="Archive sections">
         <a class="archive-line" href="/world/">
           <span class="archive-label">World record</span>
-          <span>세계의 규칙, 인물, 세력, 연대기를 정리하는 공식 색인.</span>
+          <span>중세 판타지, 현대 세계, 신과 악마의 신화적 영역을 현실의 기록처럼 정리하는 색인.</span>
         </a>
         <a class="archive-line" href="/story/">
           <span class="archive-label">Story ledger</span>
-          <span>연재 소설과 장면의 흐름을 문장 중심으로 보존하는 기록.</span>
+          <span>소환마도 신휘, 그때 하늘에서, Der Freischutz로 이어지는 주요 서사를 보존하는 기록.</span>
         </a>
         <a class="archive-line" href="/music/">
           <span class="archive-label">Sound register</span>
-          <span>SHINHWI Originals와 Project UNAC OST를 나누어 보관하는 음악 장부.</span>
+          <span>SHINHWI의 음악, Project UNAC 세계 앨범, 그리고 UNAC 안의 밴드로도 읽히는 개인 앨범의 장부.</span>
         </a>
       </div>
     </div>
