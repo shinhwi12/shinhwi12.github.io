@@ -12,6 +12,18 @@ const seriesGroups = [...new Map(
     chapters.filter((item) => item.data.series === chapter.data.series)
   ])
 ).entries()];
+const toSeriesHeadingId = (seriesTitle: string) => {
+  const slug = seriesTitle
+    .normalize('NFC')
+    .toLowerCase()
+    .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
+    .replace(/^-|-$/g, '');
+  const hash = [...seriesTitle].reduce((value, character) => (
+    ((value << 5) - value + character.codePointAt(0)!) >>> 0
+  ), 0).toString(36);
+
+  return `series-${slug || 'untitled'}-${hash}`;
+};
 ---
 <BaseLayout title="Story">
   <PageHero kicker="Literary archive" title="Story" lead="Project UNAC fiction is arranged as a quiet ebook reader: chapter order, dated entries, and a narrow page built for sustained reading rather than announcements." />
@@ -23,21 +35,25 @@ const seriesGroups = [...new Map(
         <p class="body-copy">Each public fiction sequence is grouped by series, then arranged in chapter order so new stories can live beside the first archive without being folded into the same record.</p>
       </div>
       <div class="line-list" aria-label="Series and chapter index">
-        {seriesGroups.map(([seriesTitle, seriesChapters]) => (
-          <section class="line-item" aria-labelledby={`series-${seriesTitle}`}>
-            <p class="meta">Series / {seriesChapters.length} chapter{seriesChapters.length === 1 ? '' : 's'}</p>
-            <h3 class="display-sm" id={`series-${seriesTitle}`}>{seriesTitle}</h3>
-            <div class="line-list" aria-label={`${seriesTitle} chapters`}>
-              {seriesChapters.map((chapter) => (
-                <article class="line-item">
-                  <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')} / {chapter.data.published}</p>
-                  <a href={`/story/${chapter.id}/`}><h4 class="display-xs">{chapter.data.title}</h4></a>
-                  <p class="body-copy">{chapter.data.excerpt}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
+        {seriesGroups.map(([seriesTitle, seriesChapters]) => {
+          const headingId = toSeriesHeadingId(seriesTitle);
+
+          return (
+            <section class="line-item" aria-labelledby={headingId}>
+              <p class="meta">Series / {seriesChapters.length} chapter{seriesChapters.length === 1 ? '' : 's'}</p>
+              <h3 class="display-sm" id={headingId}>{seriesTitle}</h3>
+              <div class="line-list" aria-label={`${seriesTitle} chapters`}>
+                {seriesChapters.map((chapter) => (
+                  <article class="line-item">
+                    <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')} / {chapter.data.published}</p>
+                    <a href={`/story/${chapter.id}/`}><h4 class="display-xs">{chapter.data.title}</h4></a>
+                    <p class="body-copy">{chapter.data.excerpt}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   </section>
