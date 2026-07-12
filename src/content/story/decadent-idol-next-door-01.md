@@ -4,6 +4,7 @@ series: "퇴폐 아이돌님은 옆집에 살고 계셔"
 chapter: 1
 published: "2026-06-13"
 excerpt: "활동 중단을 선언한 SHINHWI를 믿는 팬 도윤은, 분리수거도 오므라이스도 모르는 수상한 옆집 여자와 마주친다."
+next: "decadent-idol-next-door-02"
 ---
 
 ## 옆집 여자는 분리수거를 모른다
