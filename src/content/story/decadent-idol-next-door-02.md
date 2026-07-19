@@ -5,6 +5,7 @@ chapter: 2
 published: "2026-06-14"
 excerpt: "도윤은 옆집 여자 신 씨에게 라면을 끓여주고, 자신의 SHINHWI 굿즈와 팬심까지 들켜버린다."
 previous: "decadent-idol-next-door-01"
+next: "decadent-idol-next-door-03"
 ---
 
 ## 옆집 여자는 최애 굿즈를 평가한다
