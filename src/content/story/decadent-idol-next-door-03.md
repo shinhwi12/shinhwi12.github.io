@@ -5,6 +5,7 @@ chapter: 3
 published: "2026-06-15"
 excerpt: "위험한 SHINHWI 한정판 택배를 사수하려던 도윤은, 택배를 대신 받아온 신 씨와 상자를 사이에 둔 공방을 벌인다."
 previous: "decadent-idol-next-door-02"
+next: "decadent-idol-next-door-04"
 ---
 
 ## 옆집 여자는 택배를 가지고 온다
