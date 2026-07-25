@@ -5,6 +5,7 @@ chapter: 6
 published: "2026-06-18"
 excerpt: "회사 게시판의 목격담이 번지는 동안, 도윤은 신 씨의 정체보다 제대로 먹지 못했을 그녀와 기다리고 있을 라면을 먼저 걱정한다."
 previous: "decadent-idol-next-door-05"
+next: "decadent-idol-next-door-07"
 ---
 
 ## 옆집 여자는 라면이 먼저다
