@@ -12,6 +12,13 @@ const seriesGroups = [...new Map(
     chapters.filter((item) => item.data.series === chapter.data.series)
   ])
 ).entries()];
+const seriesCovers: Record<string, { src: string; alt: string; label: string }> = {
+  '퇴폐 아이돌님은 옆집에 살고 계셔': {
+    src: '/images/story/decadent-idol-next-door-vol-01.jpg',
+    alt: '퇴폐 아이돌님은 옆집에 살고 계셔 1권 표지',
+    label: 'Volume 01 / Cover'
+  }
+};
 const toSeriesHeadingId = (seriesTitle: string) => {
   const slug = seriesTitle
     .normalize('NFC')
@@ -37,19 +44,30 @@ const toSeriesHeadingId = (seriesTitle: string) => {
       <div class="line-list" aria-label="Series and chapter index">
         {seriesGroups.map(([seriesTitle, seriesChapters]) => {
           const headingId = toSeriesHeadingId(seriesTitle);
+          const cover = seriesCovers[seriesTitle];
 
           return (
             <section class="line-item" aria-labelledby={headingId}>
               <p class="meta">Series / {seriesChapters.length} chapter{seriesChapters.length === 1 ? '' : 's'}</p>
               <h3 class="display-sm" id={headingId}>{seriesTitle}</h3>
-              <div class="line-list" aria-label={`${seriesTitle} chapters`}>
-                {seriesChapters.map((chapter) => (
-                  <article class="line-item">
-                    <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')}</p>
-                    <a href={`/story/${chapter.id}/`}><h4 class="display-xs">{chapter.data.title}</h4></a>
-                    <p class="body-copy">{chapter.data.excerpt}</p>
-                  </article>
-                ))}
+              <div class:list={['series-content', { 'series-content--with-cover': cover }]}>
+                {cover && (
+                  <figure class="series-cover">
+                    <a class="series-cover-link" href={`/story/${seriesChapters[0].id}/`} aria-label={`${seriesTitle} 1화 읽기`}>
+                      <img src={cover.src} alt={cover.alt} width="768" height="1170" loading="lazy" decoding="async" />
+                    </a>
+                    <figcaption class="caption">{cover.label}</figcaption>
+                  </figure>
+                )}
+                <div class="line-list" aria-label={`${seriesTitle} chapters`}>
+                  {seriesChapters.map((chapter) => (
+                    <article class="line-item">
+                      <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')}</p>
+                      <a href={`/story/${chapter.id}/`}><h4 class="display-xs">{chapter.data.title}</h4></a>
+                      <p class="body-copy">{chapter.data.excerpt}</p>
+                    </article>
+                  ))}
+                </div>
               </div>
             </section>
           );
