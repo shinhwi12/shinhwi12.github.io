@@ -26,7 +26,7 @@ const toSeriesHeadingId = (seriesTitle: string) => {
 };
 ---
 <BaseLayout title="Story">
-  <PageHero kicker="Literary archive" title="Story" lead="Project UNAC fiction is arranged as a quiet ebook reader: chapter order, dated entries, and a narrow page built for sustained reading rather than announcements." />
+  <PageHero kicker="Literary archive" title="Story" lead="Project UNAC fiction is arranged as a quiet ebook reader: chapter order and a narrow page built for sustained reading rather than announcements." />
   <section class="section">
     <div class="container editorial-grid">
       <div class="section-head">
@@ -45,7 +45,7 @@ const toSeriesHeadingId = (seriesTitle: string) => {
               <div class="line-list" aria-label={`${seriesTitle} chapters`}>
                 {seriesChapters.map((chapter) => (
                   <article class="line-item">
-                    <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')} / {chapter.data.published}</p>
+                    <p class="meta">Chapter {String(chapter.data.chapter).padStart(2, '0')}</p>
                     <a href={`/story/${chapter.id}/`}><h4 class="display-xs">{chapter.data.title}</h4></a>
                     <p class="body-copy">{chapter.data.excerpt}</p>
                   </article>
