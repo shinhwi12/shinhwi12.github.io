@@ -4,6 +4,7 @@ number: 2
 title: "Rebeing (Light Mix)"
 duration: "04:15"
 credits:
-  - role: "Primary artist"
+  - role: "Credits"
     name: "SHINHWI"
+commentary: "Rebeing의 다른 버전"
 ---
