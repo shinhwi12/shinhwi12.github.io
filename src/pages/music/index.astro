@@ -43,7 +43,7 @@ const dateLabel = (releaseDate: string) => new Intl.DateTimeFormat('en-CA', {
             <img src={featured.data.cover} alt={`${featured.data.title} album cover`} width="1200" height="1200" />
           </a>
           <div class="music-feature-copy">
-            <p class="meta">{featured.data.catalogNumber} / {featured.data.year} / {featured.data.category}</p>
+            <p class="meta">{featured.data.catalogNumber ?? 'PUBLIC RELEASE'} / {featured.data.year} / {featured.data.category}</p>
             <h3 class="display-xl">{featured.data.title}</h3>
             <p class="lead">{featured.data.description}</p>
             <p class="body-copy">{featured.data.genre}</p>
@@ -75,7 +75,7 @@ const dateLabel = (releaseDate: string) => new Intl.DateTimeFormat('en-CA', {
                   <img src={album.data.cover} alt="" width="1200" height="1200" loading="lazy" />
                 </a>
                 <div class="release-row-copy">
-                  <p class="meta">{album.data.catalogNumber} / {dateLabel(album.data.releaseDate)}</p>
+                  <p class="meta">{album.data.catalogNumber ?? 'PUBLIC RELEASE'} / {dateLabel(album.data.releaseDate)}</p>
                   <h3 class="display-md"><a href={`/music/${album.data.slug}/`}>{album.data.title}</a></h3>
                   <p class="body-copy">{album.data.description}</p>
                   <a class="archive-open-link" href={`/music/${album.data.slug}/`}>Open booklet <span aria-hidden="true">→</span></a>
@@ -104,7 +104,7 @@ const dateLabel = (releaseDate: string) => new Intl.DateTimeFormat('en-CA', {
               <span>{album.data.year}</span>
               <span class="discography-title">{album.data.title}</span>
               <span>{album.data.category}</span>
-              <span>{album.data.catalogNumber}</span>
+              <span>{album.data.catalogNumber ?? 'PUBLIC RELEASE'}</span>
             </a>
           </li>
         ))}

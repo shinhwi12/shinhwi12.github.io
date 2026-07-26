@@ -17,7 +17,7 @@ const { album, trackCount } = Astro.props;
     <dl class="archive-record">
       <div><dt>Record title</dt><dd>{album.title}</dd></div>
       <div><dt>Primary artist</dt><dd>{album.artist}</dd></div>
-      <div><dt>Catalog number</dt><dd>{album.catalogNumber}</dd></div>
+      <div><dt>Catalog number</dt><dd>{album.catalogNumber ?? 'Not filed'}</dd></div>
       <div><dt>Release date</dt><dd>{album.releaseDate}</dd></div>
       <div><dt>Category</dt><dd>{album.category}</dd></div>
       <div><dt>Genre filing</dt><dd>{album.genre}</dd></div>

@@ -17,6 +17,7 @@ category: "SHINHWI ORIGINALS"
 genre: "Genre / Secondary genre"
 cover: "/images/music/album-title-cover.jpg"
 description: "A concise one- or two-sentence release description for indexes and metadata."
+# Omit catalogNumber when no verified public catalog number is available.
 catalogNumber: "SHW-ALB-000"
 spotifyUrl: "https://open.spotify.com/album/REPLACE_WITH_ALBUM_ID"
 appleMusicUrl: "https://music.apple.com/..."
@@ -64,6 +65,7 @@ credits:
     name: "Name"
   - role: "Mix and mastering"
     name: "Name"
+# Omit lyrics or commentary when verified public text is unavailable.
 lyrics: |-
   First lyric line.
   Second lyric line.
@@ -92,6 +94,7 @@ Place cover and booklet images in `public/images/music/`.
 - The Spotify URL must contain `/album/{album-id}` so the responsive player can be generated.
 - Use `morePlatformUrl` for a consolidated release landing page such as PUSH.fm.
 - Omit an unavailable platform field instead of using `#`.
+- Omit unverified catalog numbers, credits, lyrics, and commentary instead of filling them with placeholder text.
 - External links appear in the opening spread; only Spotify is embedded, once, on the album detail page.
 
 ## 5. Review checklist
