@@ -17,7 +17,7 @@ const releaseDate = new Intl.DateTimeFormat('en-GB', {
   <div class="container album-hero">
     <figure class="album-cover">
       <img src={album.cover} alt={`${album.title} album cover`} width="1200" height="1200" loading="eager" />
-      <figcaption class="caption">{album.catalogNumber} / Archive cover</figcaption>
+      <figcaption class="caption">{album.catalogNumber ?? 'PUBLIC RELEASE'} / Archive cover</figcaption>
     </figure>
 
     <div class="album-hero-copy">
@@ -48,7 +48,7 @@ const releaseDate = new Intl.DateTimeFormat('en-GB', {
         </div>
         <div>
           <dt>Catalog</dt>
-          <dd>{album.catalogNumber}</dd>
+          <dd>{album.catalogNumber ?? 'Not filed'}</dd>
         </div>
         <div>
           <dt>Tracks</dt>

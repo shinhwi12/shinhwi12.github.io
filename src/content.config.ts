@@ -27,7 +27,7 @@ const albums = defineCollection({
     genre: z.string(),
     cover: z.string(),
     description: z.string(),
-    catalogNumber: z.string(),
+    catalogNumber: z.string().optional(),
     spotifyUrl: z.url().optional(),
     appleMusicUrl: z.url().optional(),
     amazonMusicUrl: z.url().optional(),
@@ -55,8 +55,8 @@ const tracks = defineCollection({
       role: z.string(),
       name: z.string()
     })).default([]),
-    lyrics: z.string(),
-    commentary: z.string()
+    lyrics: z.string().optional(),
+    commentary: z.string().optional()
   })
 });
 
