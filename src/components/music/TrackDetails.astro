@@ -17,7 +17,7 @@ const { tracks } = Astro.props;
 
     <div class="track-details">
       {tracks.map((track) => (
-        <details id={`track-${String(track.data.number).padStart(2, '0')}`}>
+        <details id={`track-${String(track.data.number).padStart(2, '0')}`} open={track.data.number === 1}>
           <summary>
             <span class="track-number">{String(track.data.number).padStart(2, '0')}</span>
             <span class="display-sm">{track.data.title}</span>
@@ -58,3 +58,26 @@ const { tracks } = Astro.props;
     </div>
   </div>
 </section>
+
+<script>
+  const revealTrackFromHash = () => {
+    if (!window.location.hash.startsWith('#track-')) return;
+
+    const target = document.querySelector(window.location.hash);
+    if (!(target instanceof HTMLDetailsElement)) return;
+
+    target.open = true;
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+  document.querySelectorAll<HTMLAnchorElement>('.track-index a[href^="#track-"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      requestAnimationFrame(revealTrackFromHash);
+    });
+  });
+
+  window.addEventListener('hashchange', revealTrackFromHash);
+  revealTrackFromHash();
+</script>
