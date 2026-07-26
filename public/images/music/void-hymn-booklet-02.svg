@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Void Hymn contact sheet</title>
+  <desc id="desc">Three vertical frames contain fragments of a red signal over dark paper.</desc>
+  <rect width="1200" height="1500" fill="#0a090e"/>
+  <g stroke="#3a3a3a" stroke-width="2">
+    <rect x="90" y="120" width="300" height="1120" fill="#12101a"/>
+    <rect x="450" y="120" width="300" height="1120" fill="#161017"/>
+    <rect x="810" y="120" width="300" height="1120" fill="#101218"/>
+  </g>
+  <path d="M240 260V1090M600 220V1140M960 300V1060" stroke="#c7d2e6" stroke-width="3"/>
+  <circle cx="240" cy="650" r="96" fill="none" stroke="#7d2638" stroke-width="36"/>
+  <circle cx="600" cy="520" r="138" fill="none" stroke="#7d2638" stroke-width="3"/>
+  <circle cx="960" cy="820" r="112" fill="#7d2638"/>
+  <text x="90" y="1350" fill="#ffffff" font-family="Arial Narrow, sans-serif" font-size="66" letter-spacing="14">THREE STATES OF ABSENCE</text>
+  <text x="90" y="1408" fill="#999999" font-family="monospace" font-size="21" letter-spacing="6">CONTACT 02 / SHINHWI / 2026</text>
+</svg>

@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  tracks: CollectionEntry<'tracks'>[];
+}
+
+const { tracks } = Astro.props;
+---
+<section class="section" aria-labelledby="track-details-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Track records / Open one at a time</p>
+      <h2 id="track-details-title" class="display-lg">Lyrics &amp; notes</h2>
+      <p class="body-copy">Each record keeps lyrics, commentary, and personnel together while the booklet remains quiet at first view.</p>
+    </div>
+
+    <div class="track-details">
+      {tracks.map((track) => (
+        <details id={`track-${String(track.data.number).padStart(2, '0')}`}>
+          <summary>
+            <span class="track-number">{String(track.data.number).padStart(2, '0')}</span>
+            <span class="display-sm">{track.data.title}</span>
+            <span class="track-duration">{track.data.duration}</span>
+          </summary>
+          <div class="track-detail-body">
+            <section aria-labelledby={`lyrics-${track.id}`}>
+              <p class="kicker" id={`lyrics-${track.id}`}>Lyrics</p>
+              <p class="track-lyrics">{track.data.lyrics}</p>
+            </section>
+            <section aria-labelledby={`commentary-${track.id}`}>
+              <p class="kicker" id={`commentary-${track.id}`}>Commentary</p>
+              <p class="body-copy">{track.data.commentary}</p>
+            </section>
+            <section aria-labelledby={`credits-${track.id}`}>
+              <p class="kicker" id={`credits-${track.id}`}>Credits</p>
+              <dl class="track-credits">
+                {track.data.credits.map((credit) => (
+                  <div>
+                    <dt>{credit.role}</dt>
+                    <dd>{credit.name}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

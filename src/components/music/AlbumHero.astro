@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  album: CollectionEntry<'albums'>['data'];
+  trackCount: number;
+}
+
+const { album, trackCount } = Astro.props;
+const releaseDate = new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric'
+}).format(new Date(`${album.releaseDate}T00:00:00`));
+---
+<section class="section album-opening" aria-labelledby="album-title">
+  <div class="container album-hero">
+    <figure class="album-cover">
+      <img src={album.cover} alt={`${album.title} album cover`} width="1200" height="1200" loading="eager" />
+      <figcaption class="caption">{album.catalogNumber} / Archive cover</figcaption>
+    </figure>
+
+    <div class="album-hero-copy">
+      <p class="kicker">{album.category} / Digital booklet</p>
+      <h1 id="album-title" class="display-xl">{album.title}</h1>
+      <p class="lead">{album.description}</p>
+
+      <dl class="album-metadata" aria-label="Album metadata">
+        <div>
+          <dt>Artist</dt>
+          <dd>{album.artist}</dd>
+        </div>
+        <div>
+          <dt>Released</dt>
+          <dd>{releaseDate}</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>{album.year}</dd>
+        </div>
+        <div>
+          <dt>Genre</dt>
+          <dd>{album.genre}</dd>
+        </div>
+        <div>
+          <dt>Category</dt>
+          <dd>{album.category}</dd>
+        </div>
+        <div>
+          <dt>Catalog</dt>
+          <dd>{album.catalogNumber}</dd>
+        </div>
+        <div>
+          <dt>Tracks</dt>
+          <dd>{String(trackCount).padStart(2, '0')}</dd>
+        </div>
+      </dl>
+
+      <slot />
+    </div>
+  </div>
+</section>

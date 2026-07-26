@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  album: CollectionEntry<'albums'>['data'];
+}
+
+const { album } = Astro.props;
+const platforms = [
+  { label: 'Spotify', url: album.spotifyUrl },
+  { label: 'Apple Music', url: album.appleMusicUrl },
+  { label: 'Amazon Music', url: album.amazonMusicUrl },
+  { label: 'YouTube Music', url: album.youtubeMusicUrl },
+  { label: 'More Platforms', url: album.morePlatformUrl }
+].filter((platform): platform is { label: string; url: string } => Boolean(platform.url));
+---
+{platforms.length > 0 && (
+  <nav class="platform-links" aria-label={`${album.title} listening platforms`}>
+    <p class="caption">Listen externally</p>
+    <div class="platform-link-row">
+      {platforms.map((platform) => (
+        <a href={platform.url} target="_blank" rel="noreferrer">
+          <span>{platform.label}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+  </nav>
+)}

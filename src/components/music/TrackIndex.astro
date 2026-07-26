@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  tracks: CollectionEntry<'tracks'>[];
+}
+
+const { tracks } = Astro.props;
+---
+<section class="section track-index-section" aria-labelledby="track-index-title">
+  <div class="container booklet-split">
+    <div class="section-head compact-section-head">
+      <p class="kicker">Program / Sequence</p>
+      <h2 id="track-index-title" class="display-lg">Track index</h2>
+      <p class="caption">{String(tracks.length).padStart(2, '0')} recorded entries</p>
+    </div>
+    <ol class="track-index">
+      {tracks.map((track) => (
+        <li>
+          <a href={`#track-${String(track.data.number).padStart(2, '0')}`}>
+            <span class="track-number">{String(track.data.number).padStart(2, '0')}</span>
+            <span class="track-index-title">{track.data.title}</span>
+            <span class="track-duration">{track.data.duration}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

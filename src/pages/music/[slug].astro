@@ -1,0 +1,67 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AlbumHero from '../../components/music/AlbumHero.astro';
+import PlatformLinks from '../../components/music/PlatformLinks.astro';
+import SpotifyEmbed from '../../components/music/SpotifyEmbed.astro';
+import AlbumStatement from '../../components/music/AlbumStatement.astro';
+import TrackIndex from '../../components/music/TrackIndex.astro';
+import TrackDetails from '../../components/music/TrackDetails.astro';
+import BookletGallery from '../../components/music/BookletGallery.astro';
+import ArchiveRecord from '../../components/music/ArchiveRecord.astro';
+
+export async function getStaticPaths() {
+  const albums = await getCollection('albums');
+  return albums.map((album) => ({
+    params: { slug: album.data.slug },
+    props: { album }
+  }));
+}
+
+interface Props {
+  album: CollectionEntry<'albums'>;
+}
+
+const { album } = Astro.props;
+const { Content } = await render(album);
+const albumTracks = (await getCollection('tracks'))
+  .filter((track) => track.data.album === album.data.slug)
+  .sort((a, b) => a.data.number - b.data.number);
+const chronology = (await getCollection('albums'))
+  .sort((a, b) => Date.parse(a.data.releaseDate) - Date.parse(b.data.releaseDate));
+const albumPosition = chronology.findIndex((entry) => entry.data.slug === album.data.slug);
+const previousAlbum = albumPosition > 0 ? chronology[albumPosition - 1] : undefined;
+const nextAlbum = albumPosition < chronology.length - 1 ? chronology[albumPosition + 1] : undefined;
+---
+<BaseLayout title={album.data.title} description={album.data.description}>
+  <AlbumHero album={album.data} trackCount={albumTracks.length}>
+    <PlatformLinks album={album.data} />
+  </AlbumHero>
+
+  <SpotifyEmbed spotifyUrl={album.data.spotifyUrl} title={album.data.title} />
+
+  <AlbumStatement>
+    <Content />
+  </AlbumStatement>
+
+  <TrackIndex tracks={albumTracks} />
+  <TrackDetails tracks={albumTracks} />
+  <BookletGallery images={album.data.bookletImages} />
+  <ArchiveRecord album={album.data} trackCount={albumTracks.length} />
+
+  <nav class="container album-navigation" aria-label="Album navigation">
+    <div>
+      <p class="caption">Previous album</p>
+      {previousAlbum
+        ? <a href={`/music/${previousAlbum.data.slug}/`}>{previousAlbum.data.title}</a>
+        : <span>Beginning of public register</span>}
+    </div>
+    <a class="album-index-return" href="/music/">Discography index</a>
+    <div class="album-navigation-next">
+      <p class="caption">Next album</p>
+      {nextAlbum
+        ? <a href={`/music/${nextAlbum.data.slug}/`}>{nextAlbum.data.title}</a>
+        : <span>End of public register</span>}
+    </div>
+  </nav>
+</BaseLayout>

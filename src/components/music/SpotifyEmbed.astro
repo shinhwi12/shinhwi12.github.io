@@ -1,0 +1,29 @@
+---
+interface Props {
+  spotifyUrl?: string;
+  title: string;
+}
+
+const { spotifyUrl, title } = Astro.props;
+const albumId = spotifyUrl?.match(/\/album\/([^/?#]+)/)?.[1];
+const embedUrl = albumId ? `https://open.spotify.com/embed/album/${albumId}?utm_source=generator&theme=0` : undefined;
+---
+{embedUrl && (
+  <section class="section spotify-section" aria-labelledby="spotify-listen-title">
+    <div class="container booklet-split">
+      <div class="section-head compact-section-head">
+        <p class="kicker">Album playback</p>
+        <h2 id="spotify-listen-title" class="display-lg">Listen</h2>
+        <p class="body-copy">One album player is kept inside the booklet. The catalog index remains free of repeated embeds.</p>
+      </div>
+      <div class="spotify-embed">
+        <iframe
+          src={embedUrl}
+          title={`${title} on Spotify`}
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+)}
