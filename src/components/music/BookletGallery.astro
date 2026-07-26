@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  images: CollectionEntry<'albums'>['data']['bookletImages'];
+}
+
+const { images } = Astro.props;
+---
+{images.length > 0 && (
+  <section class="section" aria-labelledby="booklet-gallery-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Visual register / Curated plates</p>
+        <h2 id="booklet-gallery-title" class="display-lg">Booklet images</h2>
+        <p class="body-copy">Selected images only. Each plate is filed as part of the release rather than displayed as a general gallery.</p>
+      </div>
+      <div class="booklet-gallery">
+        {images.map((image, index) => (
+          <figure class:list={['booklet-figure', { 'booklet-figure--wide': index === 0 }]}>
+            <img src={image.src} alt={image.alt} loading="lazy" />
+            <figcaption class="caption">{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,18 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'Album statement' } = Astro.props;
+---
+<section class="section" aria-labelledby="album-statement-title">
+  <div class="container booklet-split">
+    <div class="section-head compact-section-head">
+      <p class="kicker">Liner notes / Intent</p>
+      <h2 id="album-statement-title" class="display-lg">{title}</h2>
+    </div>
+    <div class="prose album-statement-copy">
+      <slot />
+    </div>
+  </div>
+</section>

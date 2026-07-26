@@ -15,16 +15,48 @@ const story = defineCollection({
   })
 });
 
-const music = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/music' }),
+const albums = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/albums' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(['SHINHWI Originals', 'Project UNAC OST']),
-    kind: z.string(),
-    catalog: z.string(),
-    release: z.string(),
-    concept: z.string(),
-    platforms: z.array(z.object({ label: z.string(), url: z.string() })).default([])
+    slug: z.string(),
+    artist: z.string(),
+    releaseDate: z.string(),
+    year: z.number(),
+    category: z.enum(['SHINHWI ORIGINALS', 'PROJECT UNAC OST']),
+    genre: z.string(),
+    cover: z.string(),
+    description: z.string(),
+    catalogNumber: z.string(),
+    spotifyUrl: z.url().optional(),
+    appleMusicUrl: z.url().optional(),
+    amazonMusicUrl: z.url().optional(),
+    youtubeMusicUrl: z.url().optional(),
+    morePlatformUrl: z.url().optional(),
+    featured: z.boolean().default(false),
+    relatedWorld: z.string().optional(),
+    relatedStory: z.string().optional(),
+    bookletImages: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+      caption: z.string()
+    })).default([])
+  })
+});
+
+const tracks = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/tracks' }),
+  schema: z.object({
+    album: z.string(),
+    number: z.number().int().positive(),
+    title: z.string(),
+    duration: z.string(),
+    credits: z.array(z.object({
+      role: z.string(),
+      name: z.string()
+    })).default([]),
+    lyrics: z.string(),
+    commentary: z.string()
   })
 });
 
@@ -49,4 +81,4 @@ const world = defineCollection({
   })
 });
 
-export const collections = { story, music, gallery, world };
+export const collections = { story, albums, tracks, gallery, world };
