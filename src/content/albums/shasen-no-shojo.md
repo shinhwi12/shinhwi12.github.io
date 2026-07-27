@@ -11,7 +11,8 @@ description: "Project UNAC \"Der Freischutz\" 메인 테마"
 catalogNumber: "3"
 spotifyUrl: "https://open.spotify.com/album/2KvFAFdr17N7yBpW9dzAaI?si=f-7rHEzRSeiUloaN16Kx1A"
 morePlatformUrl: "https://push.fm/fl/liuj8r5e"
-featured: false
+featured: true
+relatedStory: "Der Freischutz"
 bookletImages: []
 ---
 

@@ -14,7 +14,7 @@ appleMusicUrl: "https://music.apple.com/gb/album/rebeing-single/1869655217"
 amazonMusicUrl: "https://www.amazon.com/dp/B0GH9P5LBG"
 youtubeMusicUrl: "https://music.youtube.com/playlist?list=OLAK5uy_lM93uvq70JINx1lbxlrh3-zJ5zE3Jsr8o"
 morePlatformUrl: "https://push.fm/fl/matmrgps"
-featured: true
+featured: false
 relatedStory: "그때 하늘에서"
 bookletImages: []
 ---
