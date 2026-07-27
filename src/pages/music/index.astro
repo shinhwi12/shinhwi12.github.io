@@ -5,8 +5,21 @@ import PageHero from '../../components/PageHero.astro';
 import PlatformLinks from '../../components/music/PlatformLinks.astro';
 
 const albums = await getCollection('albums');
+type AlbumEntry = (typeof albums)[number];
+
+const catalogValue = (album: AlbumEntry) => {
+  const value = Number.parseInt(album.data.catalogNumber ?? '', 10);
+  return Number.isNaN(value) ? Number.NEGATIVE_INFINITY : value;
+};
+
+const byCatalogNumber = (a: AlbumEntry, b: AlbumEntry) =>
+  catalogValue(a) - catalogValue(b)
+  || Date.parse(a.data.releaseDate) - Date.parse(b.data.releaseDate)
+  || a.data.title.localeCompare(b.data.title);
+
 const releases = [...albums].sort((a, b) => Date.parse(b.data.releaseDate) - Date.parse(a.data.releaseDate));
-const featured = releases.find((album) => album.data.featured) ?? releases[0];
+const catalogReleases = [...albums].sort(byCatalogNumber);
+const featured = catalogReleases.at(-1);
 const categories = [
   {
     name: 'SHINHWI ORIGINALS' as const,
@@ -58,7 +71,7 @@ const dateLabel = (releaseDate: string) => new Intl.DateTimeFormat('en-CA', {
   )}
 
   {categories.map((category) => {
-    const categoryAlbums = releases.filter((album) => album.data.category === category.name);
+    const categoryAlbums = catalogReleases.filter((album) => album.data.category === category.name);
     return (
       <section class="section music-catalog-section" aria-labelledby={category.name.toLowerCase().replaceAll(' ', '-')}>
         <div class="container editorial-grid music-category-grid">
