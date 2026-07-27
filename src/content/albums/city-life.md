@@ -16,7 +16,7 @@ bookletImages:
   - src: "/images/music/city-life-booklet-01.webp"
     alt: "SHINHWI 라이브 보컬 퍼포먼스 스터디"
     caption: "artwork003 / Live vocal performance studies"
-  - src: "/images/music/city-life-booklet-02.webp"
+  - src: "/images/music/city-life-booklet-02-artwork005.webp"
     alt: "도시의 밤에 선 SHINHWI"
     caption: "artwork005 / City night portrait"
   - src: "/images/music/city-life-booklet-03.webp"
