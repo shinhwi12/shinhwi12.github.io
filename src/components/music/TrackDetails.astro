@@ -37,8 +37,7 @@ const { tracks } = Astro.props;
               </section>
             )}
             {track.data.credits.length > 0 && (
-              <section aria-labelledby={`credits-${track.id}`}>
-                <p class="kicker" id={`credits-${track.id}`}>Credits</p>
+              <section aria-label={`Credits for ${track.data.title}`}>
                 <dl class="track-credits">
                   {track.data.credits.map((credit) => (
                     <div>

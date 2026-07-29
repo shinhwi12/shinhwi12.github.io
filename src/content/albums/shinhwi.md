@@ -15,10 +15,10 @@ featured: true
 bookletImages:
   - src: "/images/music/shinhwi-booklet-01.webp"
     alt: "SHINHWI 보컬 레코딩 세션"
-    caption: "artwork000 / Vocal recording session"
+    caption: "녹음실 보컬 세션"
   - src: "/images/music/shinhwi-booklet-02.webp"
     alt: "SHINHWI 보컬 레코딩 스터디"
-    caption: "artwork004 / Vocal recording studies"
+    caption: "녹음실 보컬 포트레이트"
 ---
 
 2000~2002년 사이에 쓰인 곡들 일부 2026년에 Suno로 리마스터

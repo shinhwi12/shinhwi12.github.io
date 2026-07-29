@@ -15,7 +15,7 @@ featured: true
 bookletImages:
   - src: "/images/music/trash-can-part-1-booklet-01.webp"
     alt: "SHINHWI 표정과 포즈 스터디"
-    caption: "artwork001 / Portrait and expression studies"
+    caption: "흰 셔츠의 표정 연작"
 ---
 
 여러 이유로 앨범에 수록하지 않은 곡들

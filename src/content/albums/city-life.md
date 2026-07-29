@@ -15,13 +15,13 @@ featured: true
 bookletImages:
   - src: "/images/music/city-life-booklet-01.webp"
     alt: "SHINHWI 라이브 보컬 퍼포먼스 스터디"
-    caption: "artwork003 / Live vocal performance studies"
+    caption: "무대 위 보컬 퍼포먼스"
   - src: "/images/music/city-life-booklet-02.webp"
     alt: "도시의 밤에 선 SHINHWI"
-    caption: "artwork005 / City night portrait"
+    caption: "밤거리의 인물 사진"
   - src: "/images/music/city-life-booklet-03.webp"
     alt: "도시 거리에서 기타를 연주하는 SHINHWI"
-    caption: "artwork012 / City street performance"
+    caption: "거리의 기타 퍼포먼스"
 ---
 
 2002~2006년 사이에 쓰인 곡들 일부 2026년에 Suno로 리마스터
