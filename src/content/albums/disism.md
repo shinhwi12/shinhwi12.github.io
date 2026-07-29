@@ -15,10 +15,10 @@ featured: true
 bookletImages:
   - src: "/images/music/disism-booklet-01.webp"
     alt: "붉은 조명 아래의 SHINHWI"
-    caption: "붉은 조명의 인물 사진"
+    caption: "Chaotic World — 붉은 조명 속에서 혼돈의 세계를 정면으로 응시하는 SHINHWI"
   - src: "/images/music/disism-booklet-02.webp"
     alt: "disism 앨범 커버"
-    caption: "가상 결혼 회사의 주문형 인간"
+    caption: "AD 2020 Virtual Marriage Company LBS — 취향과 욕망에 맞춰 주문 제작되는 인간 신부"
 ---
 
 2007~2008년 사이 곡들이니 꽤나 최근...

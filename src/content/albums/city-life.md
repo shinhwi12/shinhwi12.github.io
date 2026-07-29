@@ -15,13 +15,13 @@ featured: true
 bookletImages:
   - src: "/images/music/city-life-booklet-01.webp"
     alt: "SHINHWI 라이브 보컬 퍼포먼스 스터디"
-    caption: "무대 위 보컬 퍼포먼스"
+    caption: "Blue Sky — 영원하지 않아도 지금의 푸른 꿈을 노래하는 SHINHWI"
   - src: "/images/music/city-life-booklet-02.webp"
     alt: "도시의 밤에 선 SHINHWI"
-    caption: "밤거리의 인물 사진"
+    caption: "短想 — 어둡고 무거운 회색 도시의 밤을 걷는 SHINHWI"
   - src: "/images/music/city-life-booklet-03.webp"
     alt: "도시 거리에서 기타를 연주하는 SHINHWI"
-    caption: "거리의 기타 퍼포먼스"
+    caption: "Love — 언젠가 부를 날을 기다리던 노래를 도시 한복판에서 터뜨리는 SHINHWI"
 ---
 
 2002~2006년 사이에 쓰인 곡들 일부 2026년에 Suno로 리마스터
