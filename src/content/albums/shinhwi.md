@@ -15,10 +15,10 @@ featured: true
 bookletImages:
   - src: "/images/music/shinhwi-booklet-01.webp"
     alt: "SHINHWI 보컬 레코딩 세션"
-    caption: "녹음실 보컬 세션"
+    caption: "魂 — 힘겨운 삶 속에서도 살아 있기 위해 영혼을 노래하는 SHINHWI"
   - src: "/images/music/shinhwi-booklet-02.webp"
     alt: "SHINHWI 보컬 레코딩 스터디"
-    caption: "녹음실 보컬 포트레이트"
+    caption: "Hate — 반항과 자기혐오를 목소리로 쏟아내는 SHINHWI"
 ---
 
 2000~2002년 사이에 쓰인 곡들 일부 2026년에 Suno로 리마스터

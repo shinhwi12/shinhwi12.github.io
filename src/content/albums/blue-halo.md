@@ -15,13 +15,13 @@ featured: true
 bookletImages:
   - src: "/images/music/blue-halo-booklet-01.webp"
     alt: "Blue Halo 부클렛 이미지 — 해변에서 노래하는 SHINHWI"
-    caption: "해변의 보컬 퍼포먼스"
+    caption: "Blue Halo — 푸른 후광 아래 다시 살아나는 여름을 노래하는 SHINHWI"
   - src: "/images/music/blue-halo-booklet-02.webp"
     alt: "Blue Halo 부클렛 이미지 — 해변에서 기타를 연주하는 SHINHWI"
-    caption: "석양 아래 기타 연주"
+    caption: "Blue Halo — 수평선의 석양과 파도 위로 기타를 울리는 SHINHWI"
   - src: "/images/music/blue-halo-booklet-03.webp"
     alt: "Blue Halo 부클렛 이미지 — 저녁 해변을 걷는 SHINHWI"
-    caption: "저녁 해변의 산책"
+    caption: "잔광 — 여름이 지나간 뒤에도 남은 빛을 따라 걷는 SHINHWI"
 ---
 
 여름이다! 바다다! 비키니다!
