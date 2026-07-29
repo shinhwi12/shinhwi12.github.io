@@ -15,10 +15,10 @@ featured: true
 bookletImages:
   - src: "/images/music/disism-booklet-01.webp"
     alt: "붉은 조명 아래의 SHINHWI"
-    caption: "artwork014 / Red portrait"
+    caption: "붉은 조명의 인물 사진"
   - src: "/images/music/disism-booklet-02.webp"
     alt: "disism 앨범 커버"
-    caption: "disism_albumcover / Virtual Marriage Company"
+    caption: "가상 결혼 회사의 주문형 인간"
 ---
 
 2007~2008년 사이 곡들이니 꽤나 최근...

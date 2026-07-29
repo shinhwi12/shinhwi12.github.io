@@ -15,19 +15,19 @@ featured: true
 bookletImages:
   - src: "/images/music/twelvefold-inferno-booklet-01.webp"
     alt: "불타는 지옥에서 악마들에게 둘러싸인 SHINHWI"
-    caption: "twelvefoldinferno001 / Infernal descent"
+    caption: "악마들에게 둘러싸인 지옥"
   - src: "/images/music/twelvefold-inferno-booklet-02.webp"
     alt: "불타는 지옥에서 악마의 손아귀에 붙잡힌 SHINHWI"
-    caption: "twelvefoldinferno002 / Trial by flame"
+    caption: "불길 속 악마의 손아귀"
   - src: "/images/music/twelvefold-inferno-booklet-03.webp"
     alt: "지옥의 왕좌 앞에 앉은 SHINHWI"
-    caption: "twelvefoldinferno004 / Infernal throne"
+    caption: "지옥 왕좌 앞의 유혹"
   - src: "/images/music/twelvefold-inferno-booklet-04.webp"
     alt: "악마와 함께 검은 왕좌에 앉은 SHINHWI"
-    caption: "twelvefoldinferno005 / Crowned in cinder"
+    caption: "악마와 함께한 검은 왕좌"
   - src: "/images/music/twelvefold-inferno-booklet-05.webp"
     alt: "붉은 불꽃과 악마의 왕좌에 앉은 SHINHWI"
-    caption: "twelvefoldinferno006 / The final inferno"
+    caption: "붉은 불꽃의 마지막 왕좌"
 ---
 
 12개의 트랙, 12개의 지옥
