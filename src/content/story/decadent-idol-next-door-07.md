@@ -5,6 +5,7 @@ chapter: 7
 published: "2026-06-19"
 excerpt: "라면을 앞에 둔 도윤은 인터넷의 의심을 신 씨에게 직접 묻지만, 그녀는 본인 인증보다 평범한 저녁과 작은 방어선을 택한다."
 previous: "decadent-idol-next-door-06"
+next: "decadent-idol-next-door-08"
 ---
 
 ## 옆집 여자는 본인 인증을 피한다
