@@ -5,7 +5,7 @@ artist: "SHINHWI"
 releaseDate: "2026-07-07"
 year: 2026
 category: "SHINHWI ORIGINALS"
-genre: "Ballad"
+genre: "Rock"
 cover: "/images/music/grimm-error-cover-spotify.jpg"
 description: "개구리 불쌍해"
 catalogNumber: "18"
