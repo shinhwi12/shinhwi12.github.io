@@ -5,6 +5,7 @@ chapter: 8
 published: "2026-06-20"
 excerpt: "도윤은 온라인 사진 문제로 NOVA LINE MUSIC에 호출되고, 소속사 회의실에서 초코우유를 마시는 신 씨와 마주한다."
 previous: "decadent-idol-next-door-07"
+next: "decadent-idol-next-door-09"
 ---
 
 ## 옆집 여자는 소속사 회의실에도 있다
