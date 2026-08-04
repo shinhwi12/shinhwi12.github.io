@@ -5,6 +5,7 @@ chapter: 9
 published: "2026-08-03"
 excerpt: "소속사 회의 뒤 돌아온 도윤은 신 씨의 허술한 문단속과 낯선 방문자의 흔적을 마주하고, 그녀를 지키기 위한 최소한의 규칙을 가르친다."
 previous: "decadent-idol-next-door-08"
+next: "decadent-idol-next-door-10"
 ---
 
 ## 옆집 여자는 문단속을 배운다
