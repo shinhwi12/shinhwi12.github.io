@@ -112,6 +112,9 @@ bookletImages:
   - src: "/images/music/velvet-inferno-booklet-33.webp"
     alt: "사슬로 둘러싸인 붉은 심장 무대 앞 SHINHWI의 실루엣"
     caption: "Black Finale — 커튼이 다시 열리는 다음 막을 향해 홀로 걸어가는 SHINHWI"
+  - src: "/images/music/velvet-inferno-booklet-34.webp"
+    alt: "붉은 역광과 안개 속에 선 SHINHWI의 악마 실루엣"
+    caption: "Black Finale — 모든 불빛이 붉게 타오른 뒤, 마지막 실루엣으로 무대에 남은 SHINHWI"
 ---
 
 예쁜 건 원래 cruel 하잖아
