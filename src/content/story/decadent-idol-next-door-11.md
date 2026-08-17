@@ -5,6 +5,7 @@ chapter: 11
 published: "2026-08-18"
 excerpt: "문고리 사건 다음 날, 도윤은 안전가옥으로 떠날 신 씨에게 마지막 식사를 준비하려 하지만 앞치마 하나에서 시작된 평범한 아침은 그녀의 바다를 향한 부탁으로 예상 밖의 방향을 향한다."
 previous: "decadent-idol-next-door-10"
+next: "decadent-idol-next-door-12"
 ---
 
 ## 옆집 여자는 앞치마의 용도를 모른다
