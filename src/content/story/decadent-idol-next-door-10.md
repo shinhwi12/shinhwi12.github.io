@@ -5,6 +5,7 @@ chapter: 10
 published: "2026-08-05"
 excerpt: "문밖의 침입자가 신 씨를 SHINHWI라 부르며 문고리를 흔드는 밤, 도윤은 급식소가 된 자신의 집을 잠시 피난처로 지키고 그녀의 정체와 예정된 안전가옥 이송을 마주한다."
 previous: "decadent-idol-next-door-09"
+next: "decadent-idol-next-door-11"
 ---
 
 ## 옆집 여자는 급식소에서 피난한다
