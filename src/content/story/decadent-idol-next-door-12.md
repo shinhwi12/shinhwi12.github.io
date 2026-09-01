@@ -5,6 +5,7 @@ chapter: 12
 published: "2026-08-18"
 excerpt: "안전가옥으로 향하던 신 씨는 갑자기 바다를 보고 싶다고 말하고, 도윤은 회사와 소속사의 추적을 피해 그녀와 함께 즉흥적인 도주를 시작한다."
 previous: "decadent-idol-next-door-11"
+next: "decadent-idol-next-door-13"
 ---
 
 ## 옆집 여자는 바다로 도망친다
@@ -1311,4 +1312,3 @@ previous: "decadent-idol-next-door-11"
 차가 다시 움직였다.
 
 바다 쪽으로.
-
