@@ -5,6 +5,7 @@ chapter: 13
 published: "2026-09-02"
 excerpt: "바다에서 돌아온 신휘는 안전가옥 이동을 준비하지만, 도윤이 회사에서 연락을 기다리는 사이 휴대폰만 남긴 채 흔적도 없이 사라진다."
 previous: "decadent-idol-next-door-12"
+next: "decadent-idol-next-door-14"
 ---
 
 ## 옆집 여자는 바다를 보고 사라진다
