@@ -5,6 +5,7 @@ chapter: 14
 published: "2026-09-11"
 excerpt: "신휘의 실종을 추적하던 도윤과 NOVA는 인터넷에 예고된 방송을 발견하고, 카운트다운이 흐르는 가운데 그녀를 찾을 단서를 좇는다."
 previous: "decadent-idol-next-door-13"
+next: "decadent-idol-next-door-15"
 ---
 
 ## 옆집 여자는 인터넷에 예고된다
