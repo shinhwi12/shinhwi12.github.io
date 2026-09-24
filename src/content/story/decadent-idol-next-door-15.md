@@ -5,6 +5,7 @@ chapter: 15
 published: "2026-09-11"
 excerpt: "예고된 방송의 카운트다운이 줄어드는 가운데, 도윤과 한유경은 경찰의 수색을 기다리며 폐극장으로 향하고 그곳에서 낯익은 흔적을 발견한다."
 previous: "decadent-idol-next-door-14"
+next: "decadent-idol-next-door-16"
 ---
 
 ## 옆집 여자는 사람들에게 벗겨진다
