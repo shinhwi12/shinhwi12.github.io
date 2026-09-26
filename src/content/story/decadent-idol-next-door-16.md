@@ -5,6 +5,7 @@ chapter: 16
 published: "2026-09-24"
 excerpt: "폐극장에서 발견한 초코우유 팩을 단서로 신휘를 기다리는 도윤. 예고된 방송의 시간이 다가오고, 남이 만든 무대 위에서 신휘는 자신의 목소리를 낸다."
 previous: "decadent-idol-next-door-15"
+next: "decadent-idol-next-door-17"
 ---
 
 ## 옆집 여자는 무대를 말한다
