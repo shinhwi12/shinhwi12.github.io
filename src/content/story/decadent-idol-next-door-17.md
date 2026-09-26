@@ -5,6 +5,7 @@ chapter: 17
 published: "2026-09-27"
 excerpt: "폐극장 사건 사흘 뒤, 도윤은 사건을 전하는 뉴스를 지켜본다. 자신의 무대로 돌아가기로 한 신휘는 평범한 일상 속에서 첫 관중을 고른다."
 previous: "decadent-idol-next-door-16"
+next: "decadent-idol-next-door-18"
 ---
 
 ## 옆집 여자는 첫 관중을 고른다
