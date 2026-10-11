@@ -12,11 +12,20 @@ const seriesGroups = [...new Map(
     chapters.filter((item) => item.data.series === chapter.data.series && item.data.volume === chapter.data.volume)
   ])
 ).entries()];
-const seriesCovers: Record<string, { src: string; alt: string; label: string }> = {
-  '퇴폐 아이돌님은 옆집에 살고 계셔': {
+const seriesCovers: Record<string, { src: string; alt: string; label: string; width: number; height: number }> = {
+  '퇴폐 아이돌님은 옆집에 살고 계셔 / 1': {
     src: '/images/story/decadent-idol-next-door-vol-01.jpg',
     alt: '퇴폐 아이돌님은 옆집에 살고 계셔 1권 표지',
-    label: 'Volume 01 / Cover'
+    label: 'Volume 01 / Cover',
+    width: 768,
+    height: 1170
+  },
+  '퇴폐 아이돌님은 옆집에 살고 계셔 / 2': {
+    src: '/images/story/decadent-idol-next-door-vol-02.jpg',
+    alt: '퇴폐 아이돌님은 옆집에 살고 계셔 2권 표지',
+    label: 'Volume 02 / Cover',
+    width: 1280,
+    height: 1920
   }
 };
 const toSeriesHeadingId = (seriesTitle: string) => {
@@ -46,7 +55,7 @@ const toSeriesHeadingId = (seriesTitle: string) => {
           const seriesTitle = seriesChapters[0].data.series;
           const volume = seriesChapters[0].data.volume;
           const headingId = toSeriesHeadingId(groupKey);
-          const cover = volume === 1 ? seriesCovers[seriesTitle] : undefined;
+          const cover = seriesCovers[groupKey];
 
           return (
             <section class="line-item" aria-labelledby={headingId}>
@@ -55,8 +64,8 @@ const toSeriesHeadingId = (seriesTitle: string) => {
               <div class:list={['series-content', { 'series-content--with-cover': cover }]}>
                 {cover && (
                   <figure class="series-cover">
-                    <a class="series-cover-link" href={`/story/${seriesChapters[0].id}/`} aria-label={`${seriesTitle} 1화 읽기`}>
-                      <img src={cover.src} alt={cover.alt} width="768" height="1170" loading="lazy" decoding="async" />
+                    <a class="series-cover-link" href={`/story/${seriesChapters[0].id}/`} aria-label={`${seriesTitle} ${volume}권 1화 읽기`}>
+                      <img src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} loading="lazy" decoding="async" />
                     </a>
                     <figcaption class="caption">{cover.label}</figcaption>
                   </figure>
