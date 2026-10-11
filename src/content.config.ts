@@ -7,6 +7,7 @@ const story = defineCollection({
   schema: z.object({
     title: z.string(),
     series: z.string(),
+    volume: z.number().int().positive().default(1),
     chapter: z.number(),
     published: z.string(),
     excerpt: z.string(),

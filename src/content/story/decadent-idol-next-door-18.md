@@ -5,6 +5,7 @@ chapter: 18
 published: "2026-09-27"
 excerpt: "1권 에필로그. 도윤의 방에서 시작된 9분 43초의 MY STAGE 라이브가 세상을 뒤집고, 돌아온 신휘와 도윤의 평범하고도 소란스러운 일상이 이어진다."
 previous: "decadent-idol-next-door-17"
+next: "decadent-idol-next-door-vol-02-01"
 ---
 
 ## 에필로그: 옆집 여자는 돌아와도 분리수거를 못 한다

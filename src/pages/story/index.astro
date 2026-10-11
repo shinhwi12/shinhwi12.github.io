@@ -4,12 +4,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 
 const chapters = (await getCollection('story')).sort((a, b) =>
-  a.data.series.localeCompare(b.data.series) || a.data.chapter - b.data.chapter
+  a.data.series.localeCompare(b.data.series) || a.data.volume - b.data.volume || a.data.chapter - b.data.chapter
 );
 const seriesGroups = [...new Map(
   chapters.map((chapter) => [
-    chapter.data.series,
-    chapters.filter((item) => item.data.series === chapter.data.series)
+    `${chapter.data.series} / ${chapter.data.volume}`,
+    chapters.filter((item) => item.data.series === chapter.data.series && item.data.volume === chapter.data.volume)
   ])
 ).entries()];
 const seriesCovers: Record<string, { src: string; alt: string; label: string }> = {
@@ -42,14 +42,16 @@ const toSeriesHeadingId = (seriesTitle: string) => {
         <p class="body-copy">Each public fiction sequence is grouped by series, then arranged in chapter order so new stories can live beside the first archive without being folded into the same record.</p>
       </div>
       <div class="line-list" aria-label="Series and chapter index">
-        {seriesGroups.map(([seriesTitle, seriesChapters]) => {
-          const headingId = toSeriesHeadingId(seriesTitle);
-          const cover = seriesCovers[seriesTitle];
+        {seriesGroups.map(([groupKey, seriesChapters]) => {
+          const seriesTitle = seriesChapters[0].data.series;
+          const volume = seriesChapters[0].data.volume;
+          const headingId = toSeriesHeadingId(groupKey);
+          const cover = volume === 1 ? seriesCovers[seriesTitle] : undefined;
 
           return (
             <section class="line-item" aria-labelledby={headingId}>
               <p class="meta">Series / {seriesChapters.length} chapter{seriesChapters.length === 1 ? '' : 's'}</p>
-              <h3 class="display-sm" id={headingId}>{seriesTitle}</h3>
+              <h3 class="display-sm" id={headingId}>{seriesTitle} — {volume}권</h3>
               <div class:list={['series-content', { 'series-content--with-cover': cover }]}>
                 {cover && (
                   <figure class="series-cover">
