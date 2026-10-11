@@ -1,5 +1,5 @@
 ---
-title: "2권 CHAPTER 01: 옆집 여자는 일상 복귀도 멋대로 한다"
+title: "CHAPTER 01: 옆집 여자는 일상 복귀도 멋대로 한다"
 series: "퇴폐 아이돌님은 옆집에 살고 계셔"
 volume: 2
 chapter: 1
