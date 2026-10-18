@@ -6,6 +6,7 @@ chapter: 1
 published: "2026-10-11"
 excerpt: "돌아온 신휘는 일상 복귀도 제멋대로 시작한다. 다키마쿠라 상자를 둘러싼 소동 끝에, 도윤은 처음으로 SHINHWI의 세계 안쪽으로 발을 들인다."
 previous: "decadent-idol-next-door-18"
+next: "decadent-idol-next-door-vol-02-02"
 ---
 
 ## 옆집 여자는 일상 복귀도 멋대로 한다
