@@ -6,6 +6,7 @@ chapter: 2
 published: "2026-10-18"
 excerpt: "신휘와 함께 연습실에 들어선 도윤은 밴드 멤버들과 마주한다. 팬과 이웃, 급식소남과 기사님 사이에서 그의 일상은 이상한 쪽으로 자리를 잡아간다."
 previous: "decadent-idol-next-door-vol-02-01"
+next: "decadent-idol-next-door-vol-02-03"
 ---
 
 ## 옆집 여자는 일반인 기사님이 있다
