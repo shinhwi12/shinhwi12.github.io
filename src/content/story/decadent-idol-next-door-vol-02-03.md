@@ -6,6 +6,7 @@ chapter: 3
 published: "2026-10-25"
 excerpt: "연습실에서 신휘를 기다리던 도윤은 그녀의 낯선 단서들을 마주한다. 서류 속 숫자와 익숙한 버릇들이 겹치며, 머릿속에 말도 안 되는 의심이 떠오른다."
 previous: "decadent-idol-next-door-vol-02-02"
+next: "decadent-idol-next-door-vol-02-04"
 ---
 
 ## 옆집 여자는 덧니가 예쁘다
