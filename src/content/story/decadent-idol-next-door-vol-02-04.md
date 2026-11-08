@@ -6,6 +6,7 @@ chapter: 4
 published: "2026-11-01"
 excerpt: "신휘가 뱀파이어일지도 모른다는 의심을 떨치지 못하는 도윤. 숫자 81과 수상한 단서들을 좇던 그의 상상은 뜻밖의 소동으로 이어진다."
 previous: "decadent-idol-next-door-vol-02-03"
+next: "decadent-idol-next-door-vol-02-05"
 ---
 
 ## 옆집 여자는 뱀파이어가 된다
