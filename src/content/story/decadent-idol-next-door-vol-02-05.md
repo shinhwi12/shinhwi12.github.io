@@ -6,6 +6,7 @@ chapter: 5
 published: "2026-11-08"
 excerpt: "아버지 강태오의 회사에 들르는 강은재에게 친구들은 신휘에 관한 질문을 쏟아낸다. 가족과 친구 사이에 쌓인 오래된 시간 속에서, 도윤은 자신이 아직 모르는 신휘의 모습을 마주한다."
 previous: "decadent-idol-next-door-vol-02-04"
+next: "decadent-idol-next-door-vol-02-06"
 ---
 
 ## 옆집 여자는 친구도 가족이다
